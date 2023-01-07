@@ -7,7 +7,7 @@ pipeline {
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']],
                         userRemoteConfigs: [[
                             credentialsId: '312f845b-c93f-40bf-989e-b0db8200e41a',
-                            url: 'https://github.com/smaiifakher/devops-jenkins.git']]])
+                            url: 'https://github.com/smaiifakher/angular-ci-jenkins']]])
                 }
             }
         }
