@@ -25,25 +25,13 @@ pipeline {
                 }
             }
         }
-        stage('Version') {
+        stage('Build'){
             steps{
                 script{
-                    sh "ng version"
+                    sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml"
                 }
-            }
-        }
-        stage ('code quality'){
-            steps{
-                sh 'ng lint'
             }
         }
 
-        stage('Serve') {
-            steps{
-                script{
-                    sh "ng build"
-                }
-            }
-        }
     }
 }
