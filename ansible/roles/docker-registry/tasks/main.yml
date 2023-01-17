@@ -6,4 +6,8 @@
   docker_image:
     name: "angular-ci:v1"
     repository: "smaii/angular-ci:v1"
+- name: push image to docker hub
+  docker_image:
+    name: "smaii/angular-ci:v1"
     push: yes
+ 
