@@ -39,6 +39,13 @@ pipeline {
                 }
             }
         }
+        stage('Push to Docker hub'){
+            steps{
+                script{
+                    sh "ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml"
+                }
+            }
+        }
 
     }
 }
