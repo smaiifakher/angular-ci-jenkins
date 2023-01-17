@@ -4,5 +4,6 @@
 # tasks file for docker
 - name: push image to docker hub
   docker_image:
-    name: "smaii/angular-ci:1.0"
+    name: "angular-ci:v1"
+    repository: "smaii/angular-ci:v1"
     push: yes
