@@ -1,6 +1,6 @@
 ---
 # tasks file for docker-registry
-docker push smaii/angular-ci:tagname
+# docker push smaii/angular-ci:tagname
 # tasks file for docker
 - name: push image to docker hub
   docker_image:
