@@ -18,14 +18,14 @@ pipeline {
                 }
             }
         }
-        stage('Install') {
-             steps{
+
+        stage('Build'){
+            steps{
                 script{
-                    sh "npm install"
+                    sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml"
                 }
             }
         }
-
         stage('Docker'){
             steps{
                 script{
