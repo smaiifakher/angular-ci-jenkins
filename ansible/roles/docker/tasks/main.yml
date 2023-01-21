@@ -2,7 +2,7 @@
   # tasks file for docker
   - name: create image docker
     docker_image:
-      name: "devops"
+      name: devops
       build:
         path: /var/lib/jenkins/workspace/angular
         pull: no
@@ -11,8 +11,8 @@
       force_source: true
   - name: run container docker
     docker_container:
-      name: "devops_container"
-      image: "devops:latest"
+      name: devops_container1
+      image: devops:latest
       state: started
       recreate: true
       ports:
