@@ -1,7 +1,7 @@
 ---
 # tasks file for docker
 - name: create image docker
-  docker_image:
+  community.general.docker_image:
     name: "angular-ci"
     tag: "v1"
     build:

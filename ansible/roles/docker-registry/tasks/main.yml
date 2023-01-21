@@ -1,13 +1,13 @@
 ---
 # tasks file for docker-registry
-# docker push smaii/angular-ci:tagname
-# tasks file for docker
-- name: push image to docker hub
+- name: Log into DockerHub
+  docker_login:
+    username: smaii
+    password: Maja00001
+
+- name: Tag and push to docker hub
   docker_image:
-    name: "angular-ci:v1"
-    repository: "smaii/angular-ci:v1"
-- name: push image to docker hub
-  docker_image:
-    name: "smaii/angular-ci:v1"
+    name: angular:latest
+    repository: smaii/angular-ci
+    tag: end
     push: yes
- 
