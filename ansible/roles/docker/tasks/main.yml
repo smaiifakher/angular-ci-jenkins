@@ -1,19 +1,19 @@
 ---
-# tasks file for docker
-- name: Log out of DockerHub
-  docker_image:
-    name: angular
-    build:
-     path: /var/lib/jenkins/workspace/angular
-     pull: no
-    source: build
-    state: present
-    force_source: true
-- name: Run of Docker
-  docker_container:
-    name: devops_container
-    image: angular:latest
-    state: started
-    recreate: true
-    ports:
-     - "4200:80"
+  # tasks file for docker
+  - name: create image docker
+    docker_image:
+      name: "devops"
+      build:
+        path: /var/lib/jenkins/workspace/angular
+        pull: no
+      source: build
+      state: present
+      force_source: true
+  - name: run container docker
+    docker_container:
+      name: "devops_container"
+      image: "devops:latest"
+      state: started
+      recreate: true
+      ports:
+        - "4200:80"
